@@ -44,5 +44,7 @@ void push_usage_error(unsigned int line_number);
 void unknown_opcode_error(unsigned int line_number, char *opcode);
 void free_stack(stack_t **stack);
 int main(int argc, char *argv[]);
+
+void pint(stack_t **stack, unsigned int line_number);
 #endif /* MONTY_H */
 
