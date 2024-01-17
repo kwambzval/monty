@@ -18,7 +18,6 @@ int main(int argc, char *argv[])
 
 	if (argc != 2)
 		usage_error(argv[0]);
-
 	file = fopen(argv[1], "r");
 	if (file == NULL)
 		file_open_error(argv[1]);
@@ -38,16 +37,18 @@ int main(int argc, char *argv[])
 		{
 			pint(&stack, line_number);
 		}
+		else if (strcmp(opcode, "pop") == 0)
+		{
+			pop(&stack, line_number);
+		}
 		else
 		{
 			unknown_opcode_error(line_number, opcode);
 		}
 		line_number++;
 	}
-
 	fclose(file);
 	free_stack(&stack);
-
 	return (0);
 }
 
