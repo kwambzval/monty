@@ -55,3 +55,27 @@ void pall(stack_t **stack, unsigned int line_number)
 	}
 }
 
+/**
+ * free_stack - free stack
+ * @stack: stack
+ *
+ * Return: void.
+ */
+
+void free_stack(stack_t **stack)
+{
+	stack_t *current, *temp;
+
+	if (stack == NULL || *stack == NULL)
+		return;
+
+	current = *stack;
+	while (current != NULL)
+	{
+		temp = current;
+		current = current->next;
+		free(temp);
+	}
+
+	*stack = NULL;
+}
