@@ -38,6 +38,10 @@ typedef struct instruction_s
 /* Function Prototypes */
 void push(stack_t **stack, unsigned int line_number, const int n);
 void pall(stack_t **stack, unsigned int line_number);
+void usage_error(char *prog_name);
+void file_open_error(char *file_name);
+void push_usage_error(unsigned int line_number);
+void unknown_opcode_error(unsigned int line_number, char *opcode);
 
 #endif /* MONTY_H */
 
