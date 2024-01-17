@@ -34,6 +34,10 @@ int main(int argc, char *argv[])
 		{
 			pall(&stack, line_number);
 		}
+		else if (strcmp(opcode, "pint") == 0)
+		{
+			pint(&stack, line_number);
+		}
 		else
 		{
 			unknown_opcode_error(line_number, opcode);
@@ -85,7 +89,7 @@ void push_usage_error(unsigned int line_number)
  */
 void unknown_opcode_error(unsigned int line_number, char *opcode)
 {
-	fprintf(stderr, "L%u: unknown instruction %s\n", line_number, opcode);
+	fprintf(stderr, "L%u: unknown instruction \"%s\"\n", line_number, opcode);
 	exit(EXIT_FAILURE);
 }
 
