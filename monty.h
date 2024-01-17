@@ -42,6 +42,7 @@ void usage_error(char *prog_name);
 void file_open_error(char *file_name);
 void push_usage_error(unsigned int line_number);
 void unknown_opcode_error(unsigned int line_number, char *opcode);
-
+void free_stack(stack_t **stack);
+int main(int argc, char *argv[]);
 #endif /* MONTY_H */
 
